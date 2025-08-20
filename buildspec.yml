@@ -3,20 +3,17 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 22
-  pre_build:
-    commands:
-      - echo "Cleaning npm cache..."
-      - rm -rf node_modules package-lock.json
-      - npm cache clean --force
-  build:
+      nodejs: 18
     commands:
       - echo "Installing dependencies..."
-      - npm install
-      - echo "Building frontend..."
+      - npm ci
+  build:
+    commands:
+      - echo "Building React app..."
       - npm run build
 
 artifacts:
   files:
-    - '**/*'
-  base-directory: dist
+    - appspec.yml
+    - scripts/**/*
+    - build/**/*
