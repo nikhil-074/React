@@ -1,27 +1,18 @@
----
 version: 0.2
-env:
-  variables:
-    BUILD_DIR: dist
+
 phases:
   install:
     runtime-versions:
       nodejs: 22
     commands:
-      - echo "Node.js version: $(node -v)"
-      - echo "NPM version: $(npm -v)"
-  pre_build:
-    commands:
-      - echo "Cleaning npm cache & removing existing dependencies..."
-      - rm -rf node_modules package-lock.json
-      - npm cache clean --force
+      - echo "Installing dependencies..."
+      - npm install
   build:
     commands:
-      - echo "Installing frontend dependencies..."
-      - npm install
-      - echo "Building frontend..."
+      - echo "Building React app..."
       - npm run build
+
 artifacts:
   files:
-    - "**/*"
+    - '**/*'
   base-directory: dist
