@@ -1,20 +1,11 @@
 version: 0.2
 
-env:
-  variables:
-    BUILD_DIR: "dist"
-
-cache:
-  paths:
-    - /root/.npm/**/*
-
 phases:
   install:
     runtime-versions:
       nodejs: 22
     commands:
-      - echo "Node.js version: $(node -v)"
-      - echo "NPM version: $(npm -v)"
+      - echo "Using default npm version..."
 
   pre_build:
     commands:
@@ -28,6 +19,12 @@ phases:
       - npm install
       - echo "Building frontend..."
       - npm run build
+
+  post_build:
+    commands:
+      - echo "Deploying frontend to Nginx..."
+      - sudo rm -rf /var/www/html/*
+      - sudo cp -r dist/* /var/www/html/
 
 artifacts:
   files:
