@@ -26,19 +26,19 @@ const Header = () => {
               />
             </div>
             <span className="font-redHatDisplay font-bold text-2xl leading-9 tracking-[-0.01em] text-left">
-              JobHuntly
+              JobHunt
             </span>
           </Link>
           {/* Desktop Navigation Links */}
           <ul className="items-center hidden mt-1 md:flex">
             <li className="h-full leading-8">
               <NavLink to="/find-jobs" className="nav-link">
-                Find Jobs
+                Find Jobssssss
               </NavLink>
             </li>
             <li className="h-full leading-8">
               <NavLink to="/companies" className="nav-link">
-                Browse Companies
+                Browse Companiessssss
               </NavLink>
             </li>
           </ul>
