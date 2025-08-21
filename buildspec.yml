@@ -21,4 +21,5 @@ artifacts:
     - build/**/*
     - appspec.yml
     - codedeploy/**/*
+    - scripts/**/*
   base-directory: .
