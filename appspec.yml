@@ -2,8 +2,9 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
-    destination: /var/www/html
+  - source: build
+    destination: /var/www/site1/tmp/build
+    overwrite: true
 
 hooks:
   BeforeInstall:
@@ -13,10 +14,10 @@ hooks:
 
   AfterInstall:
     - location: scripts/after_install.sh
-      timeout: 300
-      runas: root
+      timeout: 600
+      runas: site1   # 👈 important: files owned by site1 user
 
   ApplicationStart:
     - location: scripts/start_nginx.sh
-      timeout: 300
+      timeout: 120
       runas: root
