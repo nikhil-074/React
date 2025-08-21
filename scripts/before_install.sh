@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "Cleaning old Nginx files..."
+echo "Cleaning old site files..."
 rm -rf /var/www/html/*
