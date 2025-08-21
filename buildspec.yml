@@ -9,7 +9,7 @@ phases:
       - rm -rf node_modules package-lock.json
       - npm cache clean --force
       - echo "Installing dependencies..."
-      - npm ci   
+      - npm install   
 
   build:
     commands:
