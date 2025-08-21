@@ -19,5 +19,5 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: dist   # React build output folder (adjust if yours is `build`)
+  base-directory: "./"   # React build output folder (adjust if yours is `build`)
 
